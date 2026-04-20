@@ -1,4 +1,4 @@
-import modulesConfig from "./modules.json";
+import modulesConfig from "./modules2.json";
 import { initializeRemotes } from "./loadRemote";
 
 export async function bootstrap() {

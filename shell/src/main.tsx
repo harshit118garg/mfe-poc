@@ -2,13 +2,17 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import { bootstrap } from "./bootstrap";
+import { Provider } from "react-redux";
+import { store } from "./store/store.ts";
 
 const root = document.getElementById("root")!;
 
 const renderApp = () => {
   createRoot(root).render(
     <StrictMode>
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </StrictMode>,
   );
 };

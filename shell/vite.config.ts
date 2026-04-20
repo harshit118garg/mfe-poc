@@ -26,6 +26,12 @@ export default defineConfig({
   ],
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"],
+    alias: {
+      '@modules': path.resolve(__dirname, "src/modules"),
+      '@shared': path.resolve(__dirname, "src/shared"),
+      '@pages': path.resolve(__dirname, "src/pages"),
+      '@components': path.resolve(__dirname, "src/components")
+    }
   },
   server: { port: 5000, cors: true },
   build: { target: "esnext" },

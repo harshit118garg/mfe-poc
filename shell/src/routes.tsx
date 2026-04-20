@@ -1,4 +1,4 @@
-import modulesConfig from "./modules.json";
+import modulesConfig from "./modules2.json";
 import { createBrowserRouter, type RouteObject, Outlet } from "react-router-dom";
 import { Home } from "./pages";
 import RemoteComponent from "./RemoteComponent";

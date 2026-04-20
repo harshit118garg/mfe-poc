@@ -1,0 +1,20 @@
+[
+  {
+    "type": "internal",
+    "name": "About",
+    "module": "about",
+    "route": "/about"
+  },
+  {
+    "type": "internal",
+    "name": "Services",
+    "module": "services",
+    "route": "/services"
+  },
+  {
+    "type": "internal",
+    "name": "Contacts",
+    "module": "contacts",
+    "route": "/contacts"
+  }
+]

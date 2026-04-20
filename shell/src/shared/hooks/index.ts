@@ -1,0 +1,1 @@
+export { useInjectSlice } from "./useInjectSlice";
