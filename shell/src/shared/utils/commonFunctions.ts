@@ -13,6 +13,7 @@ export function setStateObjValue(state: Record<string, unknown>, key: string, va
 
 const commonFunctions = {
   formatDate,
+  setStateObjValue
 };
 
 export { commonFunctions };

@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import type { RootState } from "../../shared";
+import type { RootState } from "../../store/store";
 import { sliceName } from "./contactus-slice";
 import type { ContactUSFieldKey } from "./model/contact-us-dto";
 import type { DTO } from "../../shared/definations/types";

@@ -14,6 +14,7 @@ export default defineConfig({
       filename: "remoteEntry.js",
       exposes: {
         "./shared": path.resolve(__dirname, "src/shared/index.ts"),
+        "./store": path.resolve(__dirname, "src/store/index.ts"),
       },
       remotes: {},
       shared: {

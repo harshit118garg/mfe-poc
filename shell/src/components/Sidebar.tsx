@@ -40,7 +40,7 @@ const Sidebar = (props: SidebarProps) => {
         </Link>
         {props.modules.map((module) => (
           <Link
-            key={module.name}
+            key={module.route}
             to={module.route}
             style={{
               padding: "0.5rem 0.75rem",
@@ -51,7 +51,7 @@ const Sidebar = (props: SidebarProps) => {
               transition: "color 0.2s, background-color 0.2s",
             }}
           >
-            {module.name}
+            {module.type === "external" ? module.module : module.name}
           </Link>
         ))}
       </nav>

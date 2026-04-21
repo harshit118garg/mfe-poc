@@ -9,7 +9,7 @@ export default defineConfig({
   plugins: [
     react(),
     federation({
-      name: "todoApp",
+      name: "remote",
       filename: "remoteEntry.js",
       remotes: {
         shell: {
@@ -19,7 +19,8 @@ export default defineConfig({
         },
       },
       exposes: {
-        "./App": "./src/App.tsx",
+        "./TodoApp": "./src/components/Todo.tsx",
+        "./Intimation": "./src/modules/intimation/intimation.tsx"
       },
       shared: {
         react: { singleton: true },
