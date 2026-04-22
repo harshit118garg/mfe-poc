@@ -5,7 +5,7 @@ import useContactUSController from "./contactus-form-controller";
 import type { ContactUSState } from "./model/contact-us-dto";
 
 export default function ContactUsForm(props: CommonProps) {
-  const { onChangeField, contactUsState, handleSubmit, handleClear } = useContactUSController(props);
+  const { onChangeField, contactUsState, handleSubmit, handleClear, relativeInfo } = useContactUSController(props);
   const { fieldsName, defaultsRules, submitJson } = contactUsState;
 
   const renderField = (key: ContactUSState["fieldsName"][keyof ContactUSState["fieldsName"]]) => {
@@ -37,7 +37,7 @@ export default function ContactUsForm(props: CommonProps) {
         <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
           {[fieldsName.name, fieldsName.email, fieldsName.phone, fieldsName.message].map(renderField)}
         </div>
-        <RelativeInfo />
+        <RelativeInfo relativeInfo={relativeInfo} onChangeField={onChangeField} />
         <div style={{ display: "flex", justifyContent: "flex-end", width: "100%", gap: "0.5rem" }}>
           <Button label="Clear" onClick={handleClear} />
           <Button label="Submit" onClick={handleSubmit} />

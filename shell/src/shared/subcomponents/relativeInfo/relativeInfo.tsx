@@ -1,13 +1,21 @@
-import useRelativeInfoController from "./relative-info-controller";
-import type { CommonProps } from "../../definations";
+import type { DTO } from "../../definations/types";
 
-export default function RelativeInfo(props: CommonProps) {
-  const { isReady, relativeInfoState, handleChange, handleSelectChange } = useRelativeInfoController(props);
-  console.log("🚀 ~ RelativeInfo ~ relativeInfoState:", relativeInfoState);
+interface RelativeInfoProps {
+  relativeInfo: DTO;
+  onChangeField: (key: string, value: string) => void;
+}
 
-  if (!isReady) return null;
+export default function RelativeInfo({ relativeInfo, onChangeField }: RelativeInfoProps) {
+  const { fieldsName, defaultsRules, submitJson } = relativeInfo;
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    onChangeField(name, value);
+  };
 
-  const { defaultsRules, submitJson, fieldsName } = relativeInfoState;
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    onChangeField(name, value);
+  };
 
   return (
     <div style={{ margin: "0 auto", padding: "1rem" }}>
