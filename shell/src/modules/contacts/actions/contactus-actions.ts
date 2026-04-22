@@ -1,11 +1,11 @@
 import { setStateObjValue } from "../../../shared";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import type { ContactUSFieldKey, ContactUSState } from "../model/contact-us-dto";
+import type { ContactUSState } from "../model/contact-us-dto";
 import { ContactUSDTO } from "../model/contact-us-dto";
 import type { DTO } from "../../../shared/definations/types";
 
 interface ChangeTextPayload {
-  key: ContactUSFieldKey;
+  key: ContactUSState["fieldsName"][keyof ContactUSState["fieldsName"]];
   value: string;
 }
 

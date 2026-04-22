@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "../shared";
-import ContactUs from "../modules/contacts/contactus-form";
+import ContactUsForm from "../modules/contacts/contactus-form";
 import contactUsSlice, { sliceName } from "../modules/contacts/contactus-slice";
 import { useInjectSlice } from "../shared/hooks";
 
@@ -12,7 +12,7 @@ function Contacts() {
   return (
     <div>
       <h1>Contacts Page</h1>
-      <ContactUs />
+      <ContactUsForm sliceName={sliceName} />
       <Link to={"/"}>
         <Button label="back to home" onClick={() => {}} />
       </Link>

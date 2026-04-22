@@ -1,4 +1,4 @@
-import { StrictMode } from "react";
+// import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import { bootstrap } from "./bootstrap";
@@ -9,11 +9,11 @@ const root = document.getElementById("root")!;
 
 const renderApp = () => {
   createRoot(root).render(
-    <StrictMode>
+    <>
       <Provider store={store}>
         <App />
       </Provider>
-    </StrictMode>,
+    </>,
   );
 };
 

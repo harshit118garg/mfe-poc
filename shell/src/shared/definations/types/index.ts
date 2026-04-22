@@ -21,3 +21,8 @@ export interface DTO {
   dtoName: string;
   menuTextColor?: MenuTextColorType;
 }
+
+export interface CommonProps {
+  sliceName?: string;
+  parentSliceName?: string;
+}

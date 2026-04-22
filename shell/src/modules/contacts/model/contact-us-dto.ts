@@ -1,24 +1,16 @@
 import type { DTO } from "../../../shared/definations/types";
 import { ContactUSDTONames } from "../contactus-dto-name";
 
+
 const { CONTACT_US } = ContactUSDTONames;
 
-export const ContactUSFieldKeys = {
-  NAME: "name",
-  EMAIL: "email",
-  PHONE: "phone",
-  MESSAGE: "message",
-} as const;
-
-export type ContactUSFieldKey = (typeof ContactUSFieldKeys)[keyof typeof ContactUSFieldKeys];
-
-export const ContactUSFields = () => {
+export function ContactUSFields() {
   return {
-    name: ContactUSFieldKeys.NAME,
-    email: ContactUSFieldKeys.EMAIL,
-    phone: ContactUSFieldKeys.PHONE,
-    message: ContactUSFieldKeys.MESSAGE,
-  } as const;
+    name: "name",
+    email: "email",
+    phone: "phone",
+    message: "message",
+  };
 };
 
 export const ContactUSDTO = (): DTO => ({
@@ -29,28 +21,28 @@ export const ContactUSDTO = (): DTO => ({
   helperText: {},
   fieldsName: ContactUSFields(),
   defaultsRules: {
-    [ContactUSFieldKeys.NAME]: {
+    [ContactUSFields().name]: {
       label: "Name",
       required: true,
       type: "text",
       minLength: 3,
       maxLength: 50,
     },
-    [ContactUSFieldKeys.EMAIL]: {
+    [ContactUSFields().email]: {
       label: "Email",
       required: true,
       type: "email",
       minLength: 3,
       maxLength: 50,
     },
-    [ContactUSFieldKeys.PHONE]: {
+    [ContactUSFields().phone]: {
       label: "Phone",
       required: true,
       type: "tel",
       minLength: 10,
       maxLength: 10,
     },
-    [ContactUSFieldKeys.MESSAGE]: {
+    [ContactUSFields().message]: {
       label: "Message",
       required: true,
       type: "textarea",
