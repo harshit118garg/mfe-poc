@@ -12,7 +12,7 @@ function Contacts() {
   return (
     <div>
       <h1>Contacts Page</h1>
-      <ContactUsForm sliceName={sliceName} />
+      <ContactUsForm rootSliceName={sliceName} />
       <Link to={"/"}>
         <Button label="back to home" onClick={() => {}} />
       </Link>

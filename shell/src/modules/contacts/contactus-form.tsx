@@ -1,12 +1,14 @@
-import { Button } from "../../shared";
+import { Button, useParentSliceName } from "../../shared";
 import type { CommonProps, DefaultRulesType } from "../../shared/definations/types";
 import RelativeInfo from "../../shared/subcomponents/relativeInfo/relativeInfo";
 import useContactUSController from "./contactus-form-controller";
 import type { ContactUSState } from "./model/contact-us-dto";
 
 export default function ContactUsForm(props: CommonProps) {
-  const { onChangeField, contactUsState, handleSubmit, handleClear, relativeInfo } = useContactUSController(props);
+  const { onChangeField, contactUsState, handleSubmit, handleClear } = useContactUSController(props);
   const { fieldsName, defaultsRules, submitJson } = contactUsState;
+
+  const parentSliceName = useParentSliceName(props.rootSliceName);
 
   const renderField = (key: ContactUSState["fieldsName"][keyof ContactUSState["fieldsName"]]) => {
     const rule = defaultsRules[key] as DefaultRulesType;
@@ -34,10 +36,8 @@ export default function ContactUsForm(props: CommonProps) {
         <legend>
           <strong>Contact Us</strong>
         </legend>
-        <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-          {[fieldsName.name, fieldsName.email, fieldsName.phone, fieldsName.message].map(renderField)}
-        </div>
-        <RelativeInfo relativeInfo={relativeInfo} onChangeField={onChangeField} />
+        <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>{[fieldsName.name, fieldsName.email, fieldsName.phone, fieldsName.message].map(renderField)}</div>
+        <RelativeInfo parentSliceName={parentSliceName} rootSliceName={props.rootSliceName} />
         <div style={{ display: "flex", justifyContent: "flex-end", width: "100%", gap: "0.5rem" }}>
           <Button label="Clear" onClick={handleClear} />
           <Button label="Submit" onClick={handleSubmit} />

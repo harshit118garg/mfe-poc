@@ -23,6 +23,6 @@ export interface DTO {
 }
 
 export interface CommonProps {
-  sliceName?: string;
   parentSliceName?: string;
+  rootSliceName: string;
 }

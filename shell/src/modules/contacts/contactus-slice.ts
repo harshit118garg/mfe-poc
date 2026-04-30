@@ -1,3 +1,4 @@
+import relativeInfoAction from "../../shared/subcomponents/relativeInfo/relative-info-actions";
 import createDynamicSlice from "../../store/dynamicSliceFactory";
 import contactUSAction from "./actions/contactus-actions";
 import { ContactUSDTO } from "./model/contact-us-dto";
@@ -11,6 +12,7 @@ const contactUsSlice = createDynamicSlice(
   },
   {
     ...contactUSAction,
+    ...relativeInfoAction
   },
 );
 

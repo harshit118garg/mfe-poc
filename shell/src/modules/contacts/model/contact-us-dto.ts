@@ -1,6 +1,6 @@
 import type { DTO } from "../../../shared/definations/types";
 import { ContactUSDTONames } from "../contactus-dto-name";
-import { RelativeInfoDTO, type RelativeInfoDTOType } from "../../../shared/subcomponents/relativeInfo/relative-info-dto";
+import { RelativeInfoDTO } from "../../../shared/subcomponents/relativeInfo/relative-info-dto";
 
 export const ContactUSFields = () => {
   return {
@@ -8,21 +8,17 @@ export const ContactUSFields = () => {
     email: "email",
     phone: "phone",
     message: "message",
+    relativeInfo: RelativeInfoDTO()
   } as const;
 };
 
-export interface ContactUSData extends DTO {
-  relativeInfo: RelativeInfoDTOType;
-}
-
-export const ContactUSDTO = (): ContactUSData => ({
+export const ContactUSDTO = (): DTO => ({
   submitJson: {},
   displayJson: {},
   isValidJson: {},
   fieldError: {},
   helperText: {},
   fieldsName: ContactUSFields(),
-  relativeInfo: RelativeInfoDTO(),
   defaultsRules: {
     [ContactUSFields().name]: {
       label: "Name",
