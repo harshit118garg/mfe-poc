@@ -1,6 +1,6 @@
 import modulesConfig from "./modules2.json";
 import { createBrowserRouter, type RouteObject, Outlet } from "react-router-dom";
-import { Home } from "./pages";
+import { ErrorFallbackPage, Home } from "./pages";
 import RemoteComponent from "./RemoteComponent";
 import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
@@ -46,8 +46,12 @@ for (const module of modulesConfig) {
     moduleRoutes.push({
       path: module.route,
       lazy: async () => {
-        const { default: Component } = await import(`./pages/${module.name}.tsx`);
-        return { Component };
+        try {
+          const { default: Component } = await import(`./pages/${module.name}.tsx`);
+          return { Component };
+        } catch (error) {
+          return { Component: ErrorFallbackPage };
+        }
       },
     });
   }

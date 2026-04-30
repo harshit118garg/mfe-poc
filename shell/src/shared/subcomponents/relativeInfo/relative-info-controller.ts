@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import type { Action } from "@reduxjs/toolkit";
 import type { RelativeInfoDTOType } from "./relative-info-dto";
-import type { CommonProps } from "../../definations";
+import { DTONames, type CommonProps } from "../../definations";
 import { getNestedValue } from "../../utils/commonFunctions";
 import type { RootState } from "../../../store/store";
 import { useParentSliceName } from "../../hooks";
@@ -13,7 +13,7 @@ interface RelativeInfoAction extends Action {
 
 export function useRelativeInfoController(props: CommonProps) {
   const dispatch = useDispatch();
-  const parentSliceName = useParentSliceName("relativeInfo", props.parentSliceName!);
+  const parentSliceName = useParentSliceName(DTONames.RELATIVE_INFO, props.parentSliceName!);
 
   const relativeInfoState = useSelector((state: RootState) => getNestedValue(state, parentSliceName)) as unknown as RelativeInfoDTOType;
   console.log("🚀 ~ useRelativeInfoController ~ relativeInfoState:", relativeInfoState)

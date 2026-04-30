@@ -1,0 +1,38 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+  gap: 1rem;
+  width: 100%;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+}
+
+.inputBox {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .label {
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .input {
+    width: 100%;
+    /* CRITICAL: This prevents the input from extending past the div */
+    box-sizing: border-box;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+}
+
+.required {
+  color: red;
+}
+
+@media (max-width: 824px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

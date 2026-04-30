@@ -20,11 +20,11 @@ const RelativeInfo = (props: CommonProps) => {
         <legend>
           <strong>Relative Info</strong>
         </legend>
-        <div style={{ display: "flex", flexDirection: "row", width: "100%", alignItems: "center", gap: "1rem" }}>
-          <div style={{ marginBottom: "1rem" }}>
+        <div className="grid">
+          <div className="inputBox">
             <label htmlFor={fieldsName.relativeName} style={{ display: "block", marginBottom: "0.25rem" }}>
               {defaultsRules[fieldsName.relativeName].label}
-              {defaultsRules[fieldsName.relativeName].required && <span style={{ color: "red" }}> *</span>}
+              {defaultsRules[fieldsName.relativeName].required && <span className="required"> *</span>}
             </label>
             <input
               type="text"
@@ -35,10 +35,10 @@ const RelativeInfo = (props: CommonProps) => {
               style={{ width: "100%" }}
             />
           </div>
-          <div style={{ marginBottom: "1rem" }}>
+          <div className="inputBox">
             <label htmlFor={fieldsName.relativeType} style={{ display: "block", marginBottom: "0.25rem" }}>
               {defaultsRules[fieldsName.relativeType].label}
-              {defaultsRules[fieldsName.relativeType].required && <span style={{ color: "red" }}> *</span>}
+              {defaultsRules[fieldsName.relativeType].required && <span className="required"> *</span>}
             </label>
             <select
               id={fieldsName.relativeType}

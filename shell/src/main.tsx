@@ -4,6 +4,7 @@ import App from "./App.tsx";
 import { bootstrap } from "./bootstrap";
 import { Provider } from "react-redux";
 import { store } from "./store/store.ts";
+import './App.css'
 
 const root = document.getElementById("root")!;
 

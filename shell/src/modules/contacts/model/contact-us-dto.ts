@@ -1,6 +1,7 @@
 import type { DTO } from "../../../shared/definations/types";
 import { ContactUSDTONames } from "../contactus-dto-name";
 import { RelativeInfoDTO } from "../../../shared/subcomponents/relativeInfo/relative-info-dto";
+import { DTONames } from "../../../shared";
 
 export const ContactUSFields = () => {
   return {
@@ -8,7 +9,7 @@ export const ContactUSFields = () => {
     email: "email",
     phone: "phone",
     message: "message",
-    relativeInfo: RelativeInfoDTO()
+    [DTONames.RELATIVE_INFO]: RelativeInfoDTO()
   } as const;
 };
 

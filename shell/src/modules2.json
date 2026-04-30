@@ -16,5 +16,11 @@
     "name": "Contacts",
     "module": "contacts",
     "route": "/contacts"
+  },
+  {
+    "type": "internal",
+    "name": "Profile",
+    "module": "profile",
+    "route": "/profile"
   }
 ]

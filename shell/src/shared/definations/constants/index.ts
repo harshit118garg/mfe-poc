@@ -10,3 +10,11 @@ export const dtoStructure: DTO = {
   helperText: {},
   dtoName: "",
 };
+
+export const DTONames = {
+  PROFILE: "ProfileDTO",
+  CONTACT_US: "ContactUsDTO",
+  RELATIVE_INFO: "relativeInfo",
+  PERSONAL_INFO: "personalInfo",
+  EDUCATION_INFO: "educationInfo",
+};
